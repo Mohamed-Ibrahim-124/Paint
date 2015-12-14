@@ -286,6 +286,11 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().add(ControlPanel, java.awt.BorderLayout.LINE_END);
 
         DrawingCanvas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DrawingCanvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                DrawingCanvasMouseDragged(evt);
+            }
+        });
         DrawingCanvas.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 DrawingCanvasMouseWheelMoved(evt);
@@ -297,11 +302,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 DrawingCanvasMouseReleased(evt);
-            }
-        });
-        DrawingCanvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                DrawingCanvasMouseDragged(evt);
             }
         });
 
